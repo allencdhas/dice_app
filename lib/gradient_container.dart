@@ -11,14 +11,26 @@ class GradientContainer extends StatelessWidget {
   @override
   Widget build(context) {
     return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Colors.deepPurple, Color.fromARGB(192, 114, 33, 164)],
-          begin: startAlign,
-          end: endAlign,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.deepPurple, Color.fromARGB(192, 114, 33, 164)],
+            begin: startAlign,
+            end: endAlign,
+          ),
         ),
-      ),
-      child: const Center(child: StyledText("Hey Allen!")),
-    );
+        child: Center(
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            Image.asset('assets/dice-images/dice-2.png', width: 200),
+            TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    textStyle:
+                        const TextStyle(color: Colors.black, fontSize: 24)),
+                child: const Text(
+                  "Roll Dice",
+                )),
+          ]),
+        ));
   }
 }
